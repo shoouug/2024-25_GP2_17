@@ -94,7 +94,7 @@ class ArticleRequest(BaseModel):
     keywords: str = ""
 
 # Set the path for Google credentials (for Firebase/Firestore)
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./credentials/gennews-2e5b4-9fcb668e6b19.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./credentials/gennews-2e5b4-5d7337a7b063.json"
 if not os.getenv("GOOGLE_APPLICATION_CREDENTIALS"):
     raise EnvironmentError(
         "The GOOGLE_APPLICATION_CREDENTIALS environment variable is not set. "
