@@ -1,0 +1,152 @@
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #FFFFFF; /* Keep body background white */
+  overflow: hidden; /* Ensure no unwanted scroll or overflow */
+}
+
+/* Lottie Animation as Background */
+.background-animationW {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  width: 60%; /* Default width for larger screens */
+  height: auto; /* Ensure aspect ratio is preserved */
+  transform: translate(-50%, -50%); /* Perfect centering */
+  z-index: 0; /* Animation behind the content */
+  opacity: 0.3; /* Adjust transparency */
+}
+
+/* Welcome Page Styles */
+.welcome-containerW {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+/* Navbar and Logo Styles */
+.navbarW {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Limit the maximum width */
+  margin: 0 auto; /* Center the navbar */
+  padding: 10px 20px; /* Add some padding for better spacing */
+  background-color: transparent; /* No background for the navbar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure navbar stays above animation */
+}
+
+/* Logo Styles */
+.logoW {
+  height: 90px;
+}
+
+/* Navbar Links */
+.navbar-linksW {
+  display: flex; /* Ensure links stay in a row */
+  gap: 20px; /* Adjust spacing between links */
+}
+
+.nav-linkW {
+  color: darkgray;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-linkW:hover {
+  color: #5B95A1; /* Hover color */
+}
+
+/* Welcome Content */
+.welcome-contentW {
+  z-index: 1; /* Ensure content is above the animation */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.welcome-titleW {
+  font-size: 36px;
+  font-weight: 400;
+  color: darkgray;
+}
+
+.welcome-descriptionW {
+  font-size: 20px;
+  font-weight: 400;
+  color: darkgray;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .background-animationW {
+    width: 50%; /* Adjust animation size for medium screens */
+  }
+
+  .welcome-titleW {
+    font-size: 32px; /* Slightly smaller title */
+  }
+
+  .welcome-descriptionW {
+    font-size: 18px; /* Slightly smaller description */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-linksW {
+    flex-direction: row; /* Keep links in a row */
+    gap: 15px;
+  }
+
+  .background-animationW {
+    width: 40%; /* Reduce animation size */
+  }
+
+  .welcome-titleW {
+    font-size: 28px; /* Smaller title */
+  }
+
+  .welcome-descriptionW {
+    font-size: 16px; /* Smaller description */
+  }
+}
+
+@media (max-width: 480px) {
+  .background-animationW {
+    width: 30%; /* Further reduce animation size for smaller screens */
+  }
+
+  .navbar-linksW {
+    flex-direction: row; /* Ensure links remain in a row */
+    gap: 10px;
+  }
+
+  .welcome-titleW {
+    font-size: 24px; /* Smaller title */
+  }
+
+  .welcome-descriptionW {
+    font-size: 14px; /* Smaller description */
+  }
+
+  .logoW {
+    height: 50px; /* Reduce logo size */
+  }
+}

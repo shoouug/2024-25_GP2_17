@@ -1,0 +1,389 @@
+/* Main Container */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto !important;
+}
+
+/* Dark mode styles for Tooltip */
+body.dark-mode .profile-tooltipH {
+  background-color: #333; 
+  color: #e0e0e0; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); 
+}
+
+body.dark-mode .profile-tooltipH h2 {
+  color: #a0c0c0;
+} 
+
+body.dark-mode .profile-tooltipH button {
+  background-color: #5B95A1;
+  color: #e0e0e0; 
+}
+
+body.dark-mode .profile-tooltipH button:hover {
+  background-color: #4a7f89; 
+}
+
+body.dark-mode .profile-tooltipH p {
+  color: #e0e0e0;
+}
+
+/* Dark mode styles*/
+body.dark-mode .edit-profile-containerW {
+  background-color: #121212;
+}
+
+body.dark-mode .formW {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .inputWijdan, 
+body.dark-mode .input-countryWijdan{
+  background-color: #2b2b2b; 
+  color: #e0e0e0; 
+  border: 1px solid #5B95A1; 
+}
+
+body.dark-mode .submit-btnW {
+  background-color: #5B95A1;
+}
+
+.edit-profile-containerW {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: white;
+  font-family: 'Inter', sans-serif;
+  height: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+
+/* Navbar with shadow and smaller font */
+.navbarW {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: flex-start; /* 🧠 left aligned */
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #5B95A1;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-arrow-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.navbar-leftW {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-leftW span:first-child {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.navbar-leftW span:last-child {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Back Arrow inside navbar */
+.back-arrow-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.back-arrow-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Welcome Name + Date */
+.navbar-leftW {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-leftW span:first-child {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.navbar-leftW span:last-child {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Form Layout */
+.formW {
+  max-width: 1000px;
+  margin-top: 200px;
+  padding: 0 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Label + Input Styling */
+.input-labelWijdan {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputWijdan,
+.input-countryWijdan {
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 10px 14px;
+  font-size: 13px;
+  border-radius: 12px;
+  transition: border-color 0.3s ease;
+}
+
+.inputWijdan:focus,
+.input-countryWijdan:focus {
+  border-color: #3b82f6;
+  outline: none;
+  background: #ffffff;
+}
+
+.inputWijdan:disabled,
+.input-countryWijdan:disabled {
+  color: #6b7280;
+  background: #f3f4f6;
+}
+
+/* Edit Button */
+.edit-textWijdan {
+  font-size: 12px;
+  color: #3b82f6;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.edit-textWijdan:hover {
+  color: #2563eb;
+}
+
+.topics-gridW {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.topic-itemW {
+  padding: 6px 12px;
+  background: #83cdcd;
+  color: white;
+  border-radius: 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.topic-itemW.selectedW {
+  background: #3a6b6b;
+}
+
+.topic-itemW:hover {
+  background: #5a9393;
+}
+
+/* Article Text Area */
+.article-sectionW {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.textW {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 13px;
+  resize: vertical;
+  background-color: #f3f4f6;
+}
+
+/* Buttons */
+.submit-btnW,
+.delete-articles-btn {
+  grid-column: span 2;
+  padding: 10px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.submit-btnW {
+  background-color: #5B95A1;
+  color: white;
+  width: 250px;
+  margin-top: 30px;
+}
+
+.submit-btnW:hover {
+  background-color: #267585;
+}
+
+.delete-articles-btn {
+  background-color: #5B95A1;
+  color: white;
+  width: 250px;
+  margin-top: 10px;
+}
+
+.delete-articles-btn:hover {
+  background-color: #5B95A1;
+}
+
+/* Section Headings */
+.edtW {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1f2937;
+  text-align: left;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .formW {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .submit-btnW,
+  .delete-articles-btn {
+    grid-column: span 1;
+    width: 100%;
+  }
+
+  .navbarW {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 16px;
+  }
+
+  .back-arrow-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Super-compact for iPhone 12 Pro (≤414px) */
+@media screen and (max-width: 414px) {
+  /* Container & Navbar */
+  .edit-profile-containerW {
+    padding: 12px 6px 40px;
+  }
+  .navbarW {
+    padding: 4px 6px;
+    font-size: 11px;
+    gap: 2px;
+  }
+  .navbar-leftW span:first-child { font-size: 13px; }
+  .navbar-leftW span:last-child  { font-size:  9px; }
+
+  /* Form grid */
+  .formW {
+    margin-top:  70px;
+    padding:   0 6px;
+    gap:       8px;
+  }
+
+  /* Labels & Inputs */
+  .input-labelWijdan { font-size: 11px; }
+  .inputWijdan,
+  .input-countryWijdan {
+    width: 70px;
+    font-size: 8px;
+    padding:   4px 6px;
+    border-radius: 8px;
+  }
+
+  /* Topic pills */
+  .topics-gridW { gap: 3px; }
+  .topic-itemW {
+    padding: 2px 6px;
+    font-size: 11px;
+  }
+
+  /* Text area */
+  .textW {
+    width: 90%;
+    font-size: 8px;
+    padding:   7px;
+    position: center;
+  }
+  .edtW { font-size: 14px; }
+
+  /* Action buttons */
+  .submit-btnW,
+  .delete-articles-btn {
+    width: 50%;
+    padding: 6px 0;
+    font-size: 12px;
+  }
+
+  /* Tooltip */
+  .profile-tooltipH {
+    width: 70%;
+    padding: 6px;
+    top: 42px;
+    right: 4px;
+  }
+  .profile-tooltipH h2 { font-size: 14px; }
+  .profile-tooltipH p  { font-size: 10px; }
+  .profile-tooltipH button {
+    font-size: 8px;
+    padding: 3px 6px;
+  }
+}
+
+body.dark-mode .input-labelWijdan{
+    color: white;
+}
+
+body.dark-mode .edtW{
+    color: white;
+}

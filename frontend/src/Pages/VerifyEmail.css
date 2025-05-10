@@ -1,0 +1,158 @@
+/*====================================
+  Verify Email Page Styles
+====================================*/
+.body{
+  background-color: #5a9393;
+}
+.verify-email-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.3s ease;
+}
+
+
+
+
+
+/* Card-style message box */
+.message-box {
+  position: relative;
+  background-color: #ffffff;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeInCard 0.6s ease-out;
+}
+
+/* Subtle fade-in animation */
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Accent stripe */
+.message-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 50px;
+  background-color: #5a9393;
+  border-top-left-radius: 12px;
+}
+
+.message-box h3 {
+  font-size: 1.5rem;
+  color: #5a9393;
+  margin-bottom: 0.75rem;
+}
+
+.message-box p {
+  font-size: 1rem;
+  color: #292727;
+  margin: 1rem 0;
+  line-height: 1.4;
+}
+
+/* Button with hover effect */
+.next-button {
+  background: linear-gradient(90deg, #6ba6a6, #5a9393);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 1.5rem;
+  width: 35%;
+  min-width: 120px;
+}
+
+.next-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(90deg, #5a9393, #4a7c87);
+}
+
+/* Dark Mode Overrides */
+body.dark-mode {
+  background: #121212;
+}
+
+body.dark-mode .verify-email-container {
+  background: #1e1e1e;
+}
+
+body.dark-mode .message-box {
+  background-color: #2b2b2b;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .message-box::before {
+  background-color: #5B95A1;
+}
+
+body.dark-mode .message-box h3 {
+  color: #5B95A1;
+}
+
+body.dark-mode .message-box p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .next-button {
+  background: linear-gradient(90deg, #5B95A1, #4A7C87);
+  color: #e0e0e0;
+}
+
+body.dark-mode .next-button:hover {
+  background: linear-gradient(90deg, #4A7C87, #3a6b6f);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .message-box {
+    max-width: 320px;
+    padding: 1.5rem;
+  }
+  .next-button {
+    width: 50%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .verify-email-container {
+    padding: 1rem;
+  }
+  .message-box {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .message-box h3 {
+    font-size: 1.25rem;
+  }
+  .message-box p {
+    font-size: 0.9rem;
+  }
+  .next-button {
+    width: 60%;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+  }
+}

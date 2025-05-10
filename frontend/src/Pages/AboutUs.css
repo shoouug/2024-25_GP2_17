@@ -1,0 +1,158 @@
+/* Main Container Styles */
+.about-us-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; /* Adjust as needed */
+  height: auto; /* Allow height to grow with content */
+  max-width: 1200px; /* Optional: Set a maximum width */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Lottie Animation on the Right Side */
+.background-animation1 {
+  position: absolute;
+  top: 1%;  /* Move the animation higher above the welcome text */
+  left: 50%;  /* Center horizontally */
+  width: 60%;  /* Adjust width */
+  height: auto;  /* Ensure aspect ratio is preserved */
+  transform: translateX(-50%);  /* Center horizontally */ 
+  opacity: 0.08;  /* Adjust transparency */
+}
+
+/* Logo Section Styles */
+.logo-sectionWH {
+  position: fixed; /* Fixed positioning */
+  top: 10px; /* Adjust this value as needed */
+  left: 18.5%; /* Adjust this value as needed */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+/* Logo Styles */
+.logoWI {
+  height: 90px; /* Adjust the logo size as needed */
+  /* You can add other styles here if needed */
+}
+
+
+/* Content Styles */
+.about-us-content {
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Cards Container Styles */
+.cards-container {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px; /* Space between cards */
+  width: 100%; /* Full width */
+  max-width: 800px; /* Limit maximum width for cards */
+  margin: 20px auto; /* Centered with margin */
+}
+
+
+/* Cards Styles */
+.cards-container {
+  width: 100%; /* Full width */
+  max-width: 800px; /* Limit maximum width for cards */
+  padding: 10px; /* Space inside container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 400px; /* Set a fixed height for imitation scrolling */
+  border: 1px solid #ccc; /* Optional: add a border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Heading Styles */
+.cards h1,
+.cards h2 {
+    color: #5b95a1; /* Set the color for h1 and h2 inside cards */
+}
+
+
+/* Card Styles */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px; /* Space inside card */
+  transition: transform 0.3s;
+}
+
+/* Hover effect for cards */
+.card:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Fade-out effect for cards */
+.card.fade-out {
+  opacity: 0.6; /* Slightly faded */
+  transform: translateY(5px); /* Slightly lower position */
+}
+
+.cards-container a {
+  color: #518893; /* Change this to your desired color */
+  text-decoration: none; /* Remove underline if desired */
+}
+
+.cards-container a:hover {
+  text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+
+.about-us-content h2 {
+  color: #5b95a1;
+  margin-top: 20px;
+  font-size: 1.5em;
+}
+
+.about-us-content p {
+  margin-bottom: 16px;
+  font-size: 0.9em;
+}
+
+/* Footer Styles */
+.about-us-footer {
+  margin-top: auto;
+  text-align: center;
+  color: #777;
+  font-size: 0.8em;
+}
+
+/* Responsive Styles */
+/* Responsive Styles for larger screens */
+@media (min-width: 768px) {
+
+
+  .about-us-container {
+      max-width: 700px;
+      padding: 30px;
+  }
+
+.about-us-content h2 {
+    font-size: 1.8em;
+}
+
+.about-us-content p {
+    font-size: 1em;
+}
+
+.about-us-footer {
+    font-size: 0.9em;
+}
+}
+
+@media (min-width: 1024px) {
+.about-us-container {
+    max-width: 900px;
+}
+
+.about-us-content h2 {
+    font-size: 2em;
+}
+
+.about-us-content p {
+    font-size: 1.1em;
+}
+}

@@ -1,0 +1,184 @@
+/*====================================
+  Tutorial Page - Creative Styles
+====================================*/
+
+/* Full-page container with floating gradient shapes */
+.body{
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: #f0fafa;
+  font-family: 'Inter', sans-serif;
+  color: #23383d;
+}
+
+/* Decorative floating circles */
+.tutorial-page::before,
+.tutorial-page::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  background: radial-gradient(circle, #6ba6a6 0%, #5b95a1 80%);
+  animation: float 12s ease-in-out infinite;
+}
+.tutorial-page::before {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+}
+.tutorial-page::after {
+  width: 250px;
+  height: 250px;
+  bottom: -80px;
+  right: -80px;
+  animation-delay: 6s;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(20px) translateX(20px); }
+}
+
+/* Step Container with glassmorphic effect */
+.step-container {
+  position: relative;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 720px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.step-container:hover {
+  transform: perspective(800px) rotateX(0deg) scale(1.02);
+}
+
+/* Step image with peeking animation */
+.step-container img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  animation: peek 6s ease-in-out infinite;
+}
+@keyframes peek {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.step-container h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: #4d8089;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.step-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  transition: color 0.3s;
+}
+.step-description::-webkit-scrollbar {
+  width: 6px;
+}
+.step-description::-webkit-scrollbar-thumb {
+  background: #5b95a1;
+  border-radius: 3px;
+}
+
+.next-button,
+.previous-button {
+  background: #5b95a1;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.75rem 1.5rem;
+  width: 140px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.next-button:hover,
+.previous-button:hover {
+  background: #4a7c87;
+  transform: translateY(-2px);
+}
+.previous-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+
+/* Progress Dots */
+.progress-indicator {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  margin-bottom:  2.5rem;
+}
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0 6px;
+}
+.dot.active {
+  background: #83cdcd;
+  box-shadow: 0 0 8px rgba(131,205,205,0.6);
+}
+
+/* Dark Mode Styles */
+.tutorial-page.dark-mode {
+  background: #111;
+  color: #ddd;
+}
+.tutorial-page.dark-mode::before,
+.tutorial-page.dark-mode::after {
+  background: radial-gradient(circle, #4a7c87 0%, #111 80%);
+  opacity: 0.1;
+}
+.tutorial-page.dark-mode .step-container {
+  background: rgba(20,20,20,0.7);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.tutorial-page.dark-mode .step-container h2 {
+  color: #83cdcd;
+}
+.tutorial-page.dark-mode .step-description {
+  color: #ccc;
+}
+.tutorial-page.dark-mode .next-button,
+.tutorial-page.dark-mode .previous-button {
+  background: linear-gradient(120deg, #5b95a1, #4a7c87);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .step-container { padding: 1.5rem; }
+  .step-container h2 { font-size: 1.75rem; }
+  .step-description { font-size: 1rem; }
+  .next-button, .previous-button { padding: 0.7rem 1.8rem; font-size: 1rem; }
+}
+@media (max-width: 480px) {
+  .tutorial-page { padding: 1rem; }
+  .step-container { width: 100%; }
+  .step-container h2 { font-size: 1.5rem; }
+  .step-description { font-size: 0.95rem; max-height: 120px; }
+  .next-button, .previous-button { width: 70%; margin: 0.5rem 0; }
+  .progress-indicator { margin-top: 1rem; }
+  .dot { width: 10px; height: 10px; margin: 0 4px; }
+}
